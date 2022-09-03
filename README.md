@@ -6,4 +6,4 @@ Backend-part of web-application for buying event tickets
 * Hibernate
 * PostgreSQL
 
-![Alt text](./docs/db_schema.PNG "db_schema")
+![Alt text](./db_schema.PNG "db_schema")
