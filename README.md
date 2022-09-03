@@ -2,8 +2,6 @@
 Backend-part of web-application for buying event tickets
 
 ## Technology stack:
-* Spring Boot / MVC / Web / Data
+* Spring Boot / MVC / Data / Security
 * Hibernate
 * PostgreSQL
-
-![Alt text](./db_schema.PNG "db_schema")
