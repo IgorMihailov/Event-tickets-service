@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /restful
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5555/event_service_db
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+        ddl-auto: none
+
+  liquibase:
+    change-log: classpath:db/master-changelog.yaml
