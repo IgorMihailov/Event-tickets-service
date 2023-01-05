@@ -1,0 +1,123 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-core-tables
+      author: mihailov
+      changes:
+        - createTable:
+            tableName: user_profile
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: user_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: email
+                  type: TEXT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: password
+                  type: TEXT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: TEXT
+              - column:
+                  name: deleted
+                  type: BOOLEAN
+
+        - createTable:
+            tableName: city
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: city_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: TEXT
+              - column:
+                  name: deleted
+                  type: BOOLEAN
+
+        - createTable:
+            tableName: artist
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: artist_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: TEXT
+              - column:
+                  name: deleted
+                  type: BOOLEAN
+
+        - createTable:
+            tableName: event
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: event_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_city_event
+                    references: city(id)
+                  name: city_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_artist_event
+                    references: artist(id)
+                  name: artist_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: TEXT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price
+                  type: DECIMAL
+              - column:
+                  constraints:
+                    nullable: false
+                  name: address
+                  type: TEXT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: description
+                  type: TEXT
+              - column:
+                  name: deleted
+                  type: BOOLEAN
